@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="input">
+    <div class="canvas">
+      <h4>Write Here</h4>
+      <canvas width="320" height="320" drawable></canvas>
+    </div>
+    <div class="buttons">
+      <button class="btn" (click)="canvas.clear();dataClear()">Clear</button>
+      <button class="btn" (click)="predict(canvas.getImgData())">Predict</button>
+    </div>
+  </div>
+  <div class="output">
+    <app-chart class="graph" [data]="predictions"></app-chart>
+    <span *ngIf="(prediction !== null);else empty">Predicted {{prediction}}, Confidence {{confidence}}%</span>
+    <ng-template #empty><span>Draw a Single Digit to get a result</span></ng-template>
+  </div>
+</div>

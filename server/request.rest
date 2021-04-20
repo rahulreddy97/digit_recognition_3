@@ -1,0 +1,5 @@
+GET http://localhost:4200
+
+###
+
+POST http://locahost:3000/predict
